@@ -1,7 +1,7 @@
 clc all; close all; clear all;
 
 tic
-[data, Fs] = audioread('sound1.wav');
+[data, Fs] = audioread('sound2.wav');
 T = 1 / Fs; 
 N = length(data);
 fp = Fs * [0:N-1]/N;
@@ -13,6 +13,7 @@ y = abs (y);
 ny = y/max(y);
 
 toc
+sound (data, Fs);
 figure (1);
 subplot (211);
 plot (t, data);
